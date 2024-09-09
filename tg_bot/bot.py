@@ -1,7 +1,7 @@
 import os
 import aiogram
 from dotenv import load_dotenv
-import asyncio
+
 
 load_dotenv()
 

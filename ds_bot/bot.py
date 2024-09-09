@@ -1,4 +1,3 @@
-import asyncio
 import os
 import ssl
 import certifi
@@ -25,10 +24,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    print(f'{message.author} - {message.content}')
     if "update" in message.content.lower():
-        await asyncio.run(to_tg(message.content))
+        await to_tg(f'Канал: {message.channel.name.capitalize()}\n'
+                    f'Сообщение: {message.content[0:40] if len(message.content) > 40 else message.content}\n'
+                    f'Ссылка: https://discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}')
 
 
 client.run(DS_KEY)
 
+# https://discord.com/channels/{guild=Guild id}/{TextChannel id}/{message id}
