@@ -4,7 +4,7 @@ import certifi
 from discord import Intents
 import discord
 from dotenv import load_dotenv
-from tg_bot.bot import to_tg
+from telegram_bot import to_tg
 
 load_dotenv()
 
@@ -31,5 +31,3 @@ async def on_message(message):
 
 
 client.run(DS_KEY)
-
-# https://discord.com/channels/{guild=Guild id}/{TextChannel id}/{message id}
