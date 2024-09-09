@@ -30,7 +30,7 @@ async def on_message(message):
                     f'Ссылка: https://discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}')
 
     if message.channel == "gravity bridge":
-        if "release" in message.content or "upgrade" in message.content:
+        if "release" in message.content.lower() or "upgrade" in message.content.lower():
             await to_tg(f'Канал: {message.channel.name.capitalize()}\n'
                         f'Сообщение: {message.content[0:40] if len(message.content) > 40 else message.content}\n'
                         f'Ссылка: https://discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}')
